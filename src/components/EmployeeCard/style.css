@@ -1,0 +1,31 @@
+/* Most of the code for this style came from 18-React\01-Activities\12-Stu_PropsReview\practice\src\components\MrKrabsCard\style.css */
+.card {
+    background: white;
+    border-radius: 5px;
+    height: 450px;
+    margin: 10px;
+    position: relative;
+    width: 325px;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    text-align: left;
+  }
+
+  .card > .img-container {
+    height: 100%;
+    text-align: center;
+    background:lightblue;
+  }
+  .card > .img-container > img {
+    width: auto;
+    height: auto;
+  }
+
+  .card > .content {
+    padding-left: 1px;
+    padding-right: 1px;
+    font-size: 15px;
+  }
+
+  .card > .content > ul > li {
+    margin-top: 10px;
+  }
