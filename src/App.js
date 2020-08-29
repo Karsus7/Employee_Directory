@@ -16,8 +16,9 @@ class App extends Component {
     sort: ""
   };
 
-
-  handleSort = (name, order) => {
+// This section sets up the ability to sort employee cards to be used below in the title
+// References to 'this.setState' can be found: 18-React\01-Activities\14-Ins_BasicState\src\components\Counter.js
+  sort = (name, order) => {
     this.setState({ employees: this.state.employees.sort((a, b) => (a[name] > b[name] ? order : -order)) })
   }
 
@@ -39,21 +40,23 @@ class App extends Component {
         <div>
           {/* The below lines render the Searchbar of the title, and sort the employee cards */}
             <input type="text" placeholder="Search" onChange={(e) => this.searchFilter(e.target.value)} />
-            <div className="h4 my-0 p-2">
+            <div className="h4 p-2">
               <div className="col">
                 <div className="d-inline">
                   Type the Name, Username, or Occupation in the search bar to search for specfic employees
                   <br/>
                   Sort the employee cards by pressing one of the following buttons:
                   <br/>
+                  {/* The section below  */}
                   {/* These lines sort employee cards by name */}
-                  <a onClick={() => { this.handleSort("name", this.state.name); this.setState
+                  {/* 'style={{ cursor: 'pointer' }}' serves to turn the cursor into a pointer when over the button, helping to confirm it is there */}
+                  <a onClick={() => { this.sort("name", this.state.name); this.setState
                   ({ name: -this.state.name, sort: "name" }) }} style={{ cursor: 'pointer' }}>Name | </a>
                   {/* These lines sort employee cards by username */}
-                  <a onClick={() => { this.handleSort("username", this.state.username); this.setState
+                  <a onClick={() => { this.sort("username", this.state.username); this.setState
                   ({ username: -this.state.username, sort: "username" }) }} style={{ cursor: 'pointer' }}>Username | </a>
                   {/* These lines sort employee cards by occupation */}
-                  <a onClick={() => { this.handleSort("occupation", this.state.occupation); this.setState
+                  <a onClick={() => { this.sort("occupation", this.state.occupation); this.setState
                   ({ occupation: -this.state.occupation, sort: "occupation" }) }} style={{ cursor: 'pointer' }}>Occupation </a>
               </div>
               </div>
