@@ -13,3 +13,6 @@ npm install
 ## Usage
 ```
 npm start
+```
+## Demo
+This page is hosted on Github Pages : [https://karsus7.github.io/Employee_Directory/](https://karsus7.github.io/Employee_Directory/)
